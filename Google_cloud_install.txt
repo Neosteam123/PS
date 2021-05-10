@@ -1,0 +1,73 @@
+#=====================================
+sudo apt update
+sudo apt-get install --assume-yes wget
+wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+sudo dpkg --install chrome-remote-desktop_current_amd64.deb
+sudo apt install --assume-yes --fix-broken
+
+
+
+#=========cinnamon-desktop=============
+sudo DEBIAN_FRONTEND=noninteractive \
+    apt install --assume-yes cinnamon-core desktop-base
+sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/cinnamon-session-cinnamon2d" > /etc/chrome-remote-desktop-session'
+sudo apt install --assume-yes task-cinnamon-desktop
+
+
+#===============XFCE==================(Optional XFCE /CINNAMOD)
+sudo DEBIAN_FRONTEND=noninteractive \
+    apt install --assume-yes xfce4 desktop-base
+sudo bash -c 'echo "exec /etc/X11/Xsession /usr/bin/xfce4-session" > /etc/chrome-remote-desktop-session'
+sudo apt install --assume-yes xscreensaver
+sudo apt install --assume-yes task-xfce-desktop
+sudo systemctl disable lightdm.service
+
+#===================FIX===============
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+sudo dpkg --install google-chrome-stable_current_amd64.deb
+sudo apt install --assume-yes --fix-broken
+
+
+#=====================================
+sudo passwd   #change pw
+passwd <user_name>  #change pw user
+
+
+#================APP===================
+su -
+apt install python-pip
+apt install python3-pip	
+pip install webdriver-manager
+pip install fake-useragent
+pip install selenium
+sudo apt install git-all #debian  /sudo dnf install git-all #linux
+
+chmod +x chromedriver
+chmod +x CREATE
+chmod +x CHROME_PROFILE
+
+
+
+#===========export_pycode===============
+pip3 install pyinstaller
+pyinstaller -F CHROME_PROFILE.py # build executable file
+
+#If pycharm is not instal => find foler pyinsatller
+find / -name "pyinstaller"
+
+#under sudo -> type below command -> copy to that folder
+
+python3 -m venv pyinstaller-venv
+source ./pyinstaller-venv/bin/activate
+pip install pyinstaller
+pyinstaller -v
+
+==========================================
+https://remotedesktop.google.com/headless
+
+git clone https://github.com/Neosteam123/PS.git 
+
+
+=========================================
+
