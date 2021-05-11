@@ -1,6 +1,7 @@
 from selenium import webdriver
+from pathlib import Path
 import time
-
+import pandas as pd
 option = webdriver.ChromeOptions()
 
 option.add_argument("--user-data-dir=C:\\Users\\NEO\\AppData\\Local\\Google\\Chrome\\User Data\\")
@@ -15,6 +16,7 @@ for i in range(len(link)):
 f.close()
 # driver.close()
 f = open('key.txt').readlines()
+# DL CSV
 for i in range(0, len(f)):
     link = "https://www.wordstream.com/popular-keywords/create/csv?tag_id="
     end_link = "-keywords"
@@ -23,3 +25,12 @@ for i in range(0, len(f)):
     time.sleep(3)       #Download csv file from wordstream
     # driver.close()
 driver.quit()
+# Change from CSV to TXT
+for in_path in Path('PATH_TO_DL_FOLDER').glob('*.csv'):
+     out_path = in_path.with_suffix('.txt')
+     with in_path.open('r') as fin, out_path.open('w') as fout:
+         reader = pd.read_csv(fin,index_col=False)
+         writer = reader["Keyword"].tolist()
+         # print(writer)
+         raw = '\n'.join(writer)
+         clear = fout.write(raw)
