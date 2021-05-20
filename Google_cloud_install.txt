@@ -52,6 +52,9 @@ chmod +x CHROME_PROFILE
 
 
 #===========export_pycode===============
+#sudo install --upgrade pip   
+#sudo pip install --upgrade setuptools
+#=======================================
 pip3 install pyinstaller
 $ if install pyinstaller show error try :
 #sudo apt-get install python-setuptools
@@ -68,6 +71,11 @@ python3 -m venv pyinstaller-venv
 source ./pyinstaller-venv/bin/activate
 pip install pyinstaller
 pyinstaller -v
+#=====Nomodule_selenium_issue============
+pip3 install selenium
+=>download file from lib  https://pypi.org/project/selenium/#files
+tar xf selenium-3.141.0.tar.gz 
+cd ->folder ->python3 setup.py install
 
 ==========================================
 https://remotedesktop.google.com/headless
