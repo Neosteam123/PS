@@ -42,7 +42,7 @@ pip install fake-useragent
 pip install selenium
 sudo apt install git
 apt install htop      #monitor
-#apt install python3-pip	
+apt install python3-pip	  #for python 3
 #sudo apt install git-all #debian  /sudo dnf install git-all #linux
 
 chmod +x chromedriver
@@ -53,6 +53,10 @@ chmod +x CHROME_PROFILE
 
 #===========export_pycode===============
 pip3 install pyinstaller
+$ if install pyinstaller show error try :
+#sudo apt-get install python-setuptools
+#sudo apt-get install python-dev
+#sudo apt install python-pip
 pyinstaller -F CHROME_PROFILE.py # build executable file
 
 #If pycharm is not instal => find foler pyinsatller
