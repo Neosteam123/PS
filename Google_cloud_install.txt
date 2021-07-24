@@ -40,6 +40,7 @@ apt install python-pip
 pip install webdriver-manager
 pip install fake-useragent
 pip install selenium
+pip3 install PTable
 sudo apt install git
 apt install htop      #monitor
 apt install python3-pip	  #for python 3
